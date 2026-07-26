@@ -83,14 +83,14 @@ def download_single(url, output_dir="downloads", format_type="video", quality="b
     cmd = ["yt-dlp", "--newline", "--continue", "--no-playlist"]
 
     if format_type == "audio":
-        cmd.extend(["-f", "bestaudio", "-x", "--audio-format", "mp3"])
+        cmd.extend(["-f", "bestaudio/best", "-x", "--audio-format", "mp3"])
     else:
         quality_map = {
-            "1080p": "bestvideo[height<=1080]+bestaudio/best[height<=1080]",
-            "720p": "bestvideo[height<=720]+bestaudio/best[height<=720]",
-            "480p": "bestvideo[height<=480]+bestaudio/best[height<=480]",
-            "360p": "bestvideo[height<=360]+bestaudio/best[height<=360]",
-            "best": "bestvideo+bestaudio/best"
+            "1080p": "best[height<=1080]/bestvideo[height<=1080]+bestaudio/best",
+            "720p": "best[height<=720]/bestvideo[height<=720]+bestaudio/best",
+            "480p": "best[height<=480]/bestvideo[height<=480]+bestaudio/best",
+            "360p": "best[height<=360]/bestvideo[height<=360]+bestaudio/best",
+            "best": "best/bestvideo+bestaudio"
         }
         fmt = quality_map.get(quality, quality_map["best"])
         cmd.extend(["-f", fmt])
