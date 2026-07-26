@@ -1,0 +1,10 @@
+{
+  "name": "ALoad",
+  "version": "1.0.0",
+  "author": "phoenix14",
+  "repository": "https://github.com/pheonix14/aload",
+  "license": "MIT",
+  "releaseTag": "v1.0.0",
+  "releaseBase": 1,
+  "totalCommits": 50
+}
