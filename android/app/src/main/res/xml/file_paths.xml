@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths>
+    <external-files-path name="downloads" path="ALoad/" />
+    <external-path name="external_downloads" path="ALoad/" />
+    <files-path name="private_downloads" path="downloads/" />
+</paths>
